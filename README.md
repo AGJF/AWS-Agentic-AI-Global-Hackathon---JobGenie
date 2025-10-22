@@ -56,28 +56,28 @@ I built JobGenie as a serverless web app using AWS services. Users upload their 
 
 ## Testing Procedure
 1) Access the Application
-- Open the deployed JobGenie web app in a browser.
+  - Open the deployed JobGenie web app in a browser.
 
 2) Upload Resume
-- Click the Upload Resume button.
-- Select a PDF file containing your resume.
+  - Click the Upload Resume button.
+  - Select a PDF file containing your resume.
 
 3) Analyze Resume
-- After uploading, click Analyze Resume.
-- The application will process the resume and fetch relevant job listings.
+  - After uploading, click Analyze Resume.
+  - The application will process the resume and fetch relevant job listings.
 
 4) Review Job Matches
-- Browse the job listings and check the compatibility scores.
-- View the missing skills highlighted for each job.
+  - Browse the job listings and check the compatibility scores.
+  - View the missing skills highlighted for each job.
 
 5) Amend Resume
-- Click View Details on a job.
-- Use the Amend Resume feature to add additional skills or information.
-- The system will generate a new tailored resume.
+  - Click View Details on a job.
+  - Use the Amend Resume feature to add additional skills or information.
+  - The system will generate a new tailored resume.
 
 6) Download Tailored Resume
-- Once the tailored resume is generated, download it via the provided link.
-- Verify that the content reflects the added skills and job-specific tailoring.
+  - Once the tailored resume is generated, download it via the provided link.
+  - Verify that the content reflects the added skills and job-specific tailoring.
 
 
 
