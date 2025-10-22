@@ -17,33 +17,33 @@ JobGenie helps job seekers apply smarter. You upload your resume, and it checks 
 I built JobGenie as a serverless web app using AWS services. Users upload their resume via a web interface, which stores it in S3. Lambda functions extract the text, fetch relevant job listings, and interact with Bedrock AI to analyze skills and generate tailored resumes. The frontend displays job matches, compatibility scores, and allows users to refine their resume interactively if needed.
 
 ## Challenges I ran into
--Handling PDF resume extraction reliably across different formats.
--Setting up CORS correctly for API Gateway to avoid frustrating 403 errors.
--Ensuring Bedrock AI responses were parsed safely, even when output formats varied.
--Balancing speed and accuracy when generating resumes for multiple job listings.
--Trying to learn AWS services
+- Handling PDF resume extraction reliably across different formats.
+- Setting up CORS correctly for API Gateway to avoid frustrating 403 errors.
+- Ensuring Bedrock AI responses were parsed safely, even when output formats varied.
+- Balancing speed and accuracy when generating resumes for multiple job listings.
+- Trying to learn AWS services
 
 ## Accomplishments that I am proud of
--Gained hands-on experience with multiple AWS services like S3, Lambda, API Gateway, and Bedrock, understanding how each service works and their benefits.
--Successfully implemented these services to build a fully functional project that automates resume analysis and job matching.
--Learned how to combine cloud infrastructure and AI to solve a real-world problem, turning a personal idea into a working application.
+- Gained hands-on experience with multiple AWS services like S3, Lambda, API Gateway, and Bedrock, understanding how each service works and their benefits.
+- Successfully implemented these services to build a fully functional project that automates resume analysis and job matching.
+- Learned how to combine cloud infrastructure and AI to solve a real-world problem, turning a personal idea into a working application.
 
 ## What we learned
--The importance of robust error handling for cloud functions and API integrations.
--How to orchestrate multiple AWS services (S3, Lambda, API Gateway, Bedrock) into a seamless workflow.
--Practical experience in working with AI models for text analysis and generation.
--How small UX details, like real-time skill feedback, dramatically improve user engagement.
+- The importance of robust error handling for cloud functions and API integrations.
+- How to orchestrate multiple AWS services (S3, Lambda, API Gateway, Bedrock) into a seamless workflow.
+- Practical experience in working with AI models for text analysis and generation.
+- How small UX details, like real-time skill feedback, dramatically improve user engagement.
 
 ## What's next for JobGenie
--Allow other form of input such as .docx
--Integrate stronger APIs (e.g., LinkedIn, JobStreet) to access a larger pool of job postings.
--Expand AI capabilities to suggest personalized learning paths and upskilling opportunities for missing skills.
--Add multi-language support for both job listings and resume tailoring.
--Enable direct submission of tailored resumes to companies or job portals, possibly in partnership with large employers.
--Implement a dashboard to track resumes submitted, application status, and company responses.
--Introduce advanced analytics to measure success rates and compatibility improvements over time.
--Offer personalized career insights based on users’ application history and skill development.
--Explore mobile app support for on-the-go resume tailoring and job tracking.
+- Allow other form of input such as .docx
+- Integrate stronger APIs (e.g., LinkedIn, JobStreet) to access a larger pool of job postings.
+- Expand AI capabilities to suggest personalized learning paths and upskilling opportunities for missing skills.
+- Add multi-language support for both job listings and resume tailoring.
+- Enable direct submission of tailored resumes to companies or job portals, possibly in partnership with large employers.
+- Implement a dashboard to track resumes submitted, application status, and company responses.
+- Introduce advanced analytics to measure success rates and compatibility improvements over time.
+- Offer personalized career insights based on users’ application history and skill development.
+- Explore mobile app support for on-the-go resume tailoring and job tracking.
 
 ## Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
@@ -52,32 +52,32 @@ I built JobGenie as a serverless web app using AWS services. Users upload their 
 - **APIs:** JSearch API
 
 ## Requirements
--A valid API key for the job listings API (e.g., RapidAPI).
+- A valid API key for the job listings API (e.g., RapidAPI).
 
 ## Testing Procedure
 1) Access the Application
--Open the deployed JobGenie web app in a browser.
+- Open the deployed JobGenie web app in a browser.
 
-2)Upload Resume
--Click the Upload Resume button.
--Select a PDF file containing your resume.
+2) Upload Resume
+- Click the Upload Resume button.
+- Select a PDF file containing your resume.
 
-3)Analyze Resume
--After uploading, click Analyze Resume.
--The application will process the resume and fetch relevant job listings.
+3) Analyze Resume
+- After uploading, click Analyze Resume.
+- The application will process the resume and fetch relevant job listings.
 
-4)Review Job Matches
--Browse the job listings and check the compatibility scores.
--View the missing skills highlighted for each job.
+4) Review Job Matches
+- Browse the job listings and check the compatibility scores.
+- View the missing skills highlighted for each job.
 
-5)Amend Resume
--Click View Details on a job.
--Use the Amend Resume feature to add additional skills or information.
--The system will generate a new tailored resume.
+5) Amend Resume
+- Click View Details on a job.
+- Use the Amend Resume feature to add additional skills or information.
+- The system will generate a new tailored resume.
 
-6)Download Tailored Resume
--Once the tailored resume is generated, download it via the provided link.
--Verify that the content reflects the added skills and job-specific tailoring.
+6) Download Tailored Resume
+- Once the tailored resume is generated, download it via the provided link.
+- Verify that the content reflects the added skills and job-specific tailoring.
 
 
 
