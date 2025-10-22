@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobGenie – AI Resume Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6a34a.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <i class="fas fa-robot"></i>
+        <span>JobGenie</span>
+      </div>
+      <div class="tagline">AI-Powered Career Assistant</div>
+    </div>
+  </header>
+
+  <div class="container main-container">
+    <!-- Upload Screen -->
+    <section id="screen-upload" class="screen active">
+      <div class="screen-header">
+        <div class="icon-circle">
+          <i class="fas fa-cloud-upload-alt"></i>
+        </div>
+        <h1>Find Your Dream Job</h1>
+        <p class="subtitle">Tell us what you're looking for</p>
+      </div>
+      
+      <!-- NEW: Job Search Form -->
+      <div class="search-form">
+        <div class="form-group">
+          <label for="jobTitle">Job Title</label>
+          <input type="text" id="jobTitle" placeholder="e.g. Software Engineer, Data Analyst, UX Designer" value="Software Engineer Intern">
+        </div>
+        
+        <div class="form-group">
+          <label for="jobType">Job Type</label>
+          <select id="jobType">
+            <option value="intern">Internship</option>
+            <option value="fulltime">Full-time</option>
+            <option value="parttime">Part-time</option>
+            <option value="contract">Contract</option>
+            <option value="remote">Remote</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="jobRegion">Region</label>
+          <select id="jobRegion">
+            <option value="singapore">Singapore</option>
+            <option value="united states">United States</option>
+            <option value="united kingdom">United Kingdom</option>
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="europe">Europe</option>
+            <option value="remote">Remote Worldwide</option>
+          </select>
+        </div>
+      </div>
+      
+      <div class="upload-area" id="uploadArea">
+        <div class="upload-content">
+          <i class="fas fa-file-pdf upload-icon"></i>
+          <h3>Drop your resume here</h3>
+          <p>Supports PDF files up to 5MB</p>
+          <input type="file" id="resumeInput" accept="application/pdf" />
+          <label for="resumeInput" class="btn btn-primary">
+            <i class="fas fa-folder-open"></i> Choose File
+          </label>
+        </div>
+        <div class="file-info" id="fileInfo">
+          <i class="fas fa-check-circle"></i>
+          <span id="fileNameText">No file selected</span>
+        </div>
+      </div>
+      
+      <button id="analyzeBtn" class="btn btn-primary btn-large">
+        <i class="fas fa-magic"></i> Find Matching Jobs
+      </button>
+    </section>
+
+    <!-- Job Listings Screen -->
+    <section id="screen-jobs" class="screen">
+      <div class="screen-header">
+        <div class="icon-circle">
+          <i class="fas fa-briefcase"></i>
+        </div>
+        <h1>Recommended Jobs</h1>
+        <p class="subtitle">Tailored matches based on your resume</p>
+      </div>
+      
+      <div id="jobsContainer" class="job-grid"></div>
+      
+      <div class="action-bar">
+        <button class="btn btn-secondary" id="backToUpload">
+          <i class="fas fa-arrow-left"></i> Back to Upload
+        </button>
+      </div>
+    </section>
+
+    <!-- Job Details Screen -->
+    <section id="screen-details" class="screen">
+      <div class="screen-header">
+        <div class="icon-circle">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h1>Job Details</h1>
+        <p class="subtitle">Compatibility analysis</p>
+      </div>
+      
+      <div id="jobDetails" class="job-details-card"></div>
+      
+      <div class="action-bar">
+        <button class="btn btn-secondary" id="backToJobs">
+          <i class="fas fa-arrow-left"></i> Back to Jobs
+        </button>
+      </div>
+    </section>
+
+    <!-- Skills Q&A Screen -->
+    <section id="screen-qa" class="screen">
+      <div class="screen-header">
+        <div class="icon-circle">
+          <i class="fas fa-comments"></i>
+        </div>
+        <h1>Enhance Your Resume</h1>
+        <p class="subtitle">Tell us about your skills to create a perfect match</p>
+      </div>
+      
+      <div id="qaContainer" class="qa-container"></div>
+      
+      <div class="action-bar">
+        <button id="submitSkills" class="btn btn-primary btn-large" style="display: none;">
+          <i class="fas fa-wand-magic-sparkles"></i> Generate Tailored Resume
+        </button>
+        <button class="btn btn-secondary" id="backToDetails">
+          <i class="fas fa-arrow-left"></i> Back to Details
+        </button>
+      </div>
+    </section>
+
+    <!-- Generated Resume Screen -->
+    <section id="screen-generated" class="screen">
+      <div class="screen-header">
+        <div class="icon-circle">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h1>Your Tailored Resume</h1>
+        <p class="subtitle">Optimized for the selected position</p>
+      </div>
+      
+      <div class="resume-preview-container">
+        <div id="resumePreview" class="resume-preview"></div>
+      </div>
+      
+      <div class="action-bar">
+        <button id="downloadResume" class="btn btn-primary">
+          <i class="fas fa-download"></i> Download Resume
+        </button>
+        <button id="submitResume" class="btn btn-success">
+          <i class="fas fa-paper-plane"></i> Submit Application
+        </button>
+        <button class="btn btn-secondary" id="backToJobsFromResume">
+          <i class="fas fa-arrow-left"></i> Back to Jobs
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="loading-overlay" style="display: none;">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <h3 id="loadingText">Processing your resume...</h3>
+      <p>This may take up to 30 seconds</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
